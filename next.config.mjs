@@ -1,13 +1,19 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  env: {
+    API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL,
+  },
   images: {
-    domains: ['via.placeholder.com'],
+    domains: ["via.placeholder.com", "fakestoreapi.com"],
     remotePatterns: [
       {
         protocol: "https",
         hostname: "images.pexels.com",
+      },
+      {
+        protocol: "https",
+        hostname: "example.com",
       },
       {
         protocol: "https",
